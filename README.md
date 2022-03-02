@@ -1,2 +1,32 @@
-# Custom-Rom-Root-Mi-A3
-Manual method to Flash a Custom Rom &amp; Root at the same time
+# Manual method to Flash a Custom Rom & Root at the same time
+
+- [ ] `fastboot set_active b`
+- [ ] `fastboot flash boot twrp.img`
+- [ ] `fastboot reboot recovery`
+- [ ] wipe → format data → "yes"
+- [ ] Copy Following Files to Internal Storage:
+	- [ ] CustomRom.zip
+	- [ ] disable force encrypenter code hereyion.zip
+	- [ ] disable force encrypyion _treble.zip
+	- [ ] twrp.img
+- [ ] Install → Select "CustomRom.zip"
+- [ ] Advanced → Install Recovery Ramdisk → twrp.img
+- [ ] Change Slot
+	- [ ] Reboot → Slot A
+	- [ ] Reboot → Recovery + just to be sure press vol up at the startup anyway
+- [ ] Install → Navigate: /data/media → DisableForceEncryption.zip + ✔ Skip Digest check before installing zip → Wipe Dalvik
+- [ ] Install → Navigate: /data/media → DisableForceEncryption_treble.zip + ✔ Skip Digest check before installing zip → Wipe Dalvik + reboot system
+- [ ] Setup your OS
+- [ ] Restart into recovery mode → adb reboot recovery / vol up + lock
+- [ ] Send magisk to /data/media → adb push magisk.zip /data/media
+- [ ] Rename magisk.apk to magisk.zip (make sure name of zip is only alphanumberic)
+- [ ] make sure only “data” and “vendor” mounted
+- [ ] Mount → data
+- [ ] Mount → vendor
+- [ ] Install → nagivate to: /data/media → select magisk.zip → ✔ Skip Digest Check → swipe
+- [ ] Reboot → System
+- [ ] Complete the rooting
+	- [ ] Wait for Magisk App shortcut to appear in app drawar
+	- [ ] Download the magisk app → Install it
+	- [ ] Download Root Checker → Confirm that the root was completed
+- [ ] Delete All the copied files in /data/media
